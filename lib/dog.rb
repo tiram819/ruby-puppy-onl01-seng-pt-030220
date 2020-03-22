@@ -1,18 +1,22 @@
 class Dog
-  attr_accessor :name   
-  
-  @@all = [ ]   
+
+  attr_accessor :name
+
+  @@all = []
 
   def initialize(name)
     @name = name
-    @@all << self   
+    @@all << self
   end
 
   def self.all
-    puts @@all.collect {|dog| dog.name} 
+    @@all.each do |dog|
+      puts dog.name
+    end
   end
 
   def self.clear_all
     @@all.clear
   end
+
 end
